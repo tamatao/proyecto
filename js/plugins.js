@@ -12,4 +12,8 @@ if (!(window.console && console.log)) {
 }
 
 // Place any jQuery/helper plugins in here.
+document.write('<script src="js/vendor/uri.js"><\/script>')
 document.write('<script src="js/vendor/bootstrap-button.js"><\/script>')
+document.write('<script src="js/vendor/bootstrap-alert.js"><\/script>')
+document.write('<script src="js/vendor/page.js"><\/script>')
+document.write('<script src="js/vendor/app.js"><\/script>')
