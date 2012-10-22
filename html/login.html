@@ -1,0 +1,49 @@
+<script src="js/login.js"></script>
+		<div class="front">
+			<div class="front-login">
+				<form id="login" action="login.inc.js" class="signin" method="post">
+					<div class="">
+						<label for="signin-email" class="placeholder">Nombre de usuario o correo electr&#243;nico</label>
+						<input type="text" id="signin-email" class="text-input email-input" name="session[username_or_email]" title="Nombre de usuario o correo electr&#243;nico" autocomplete="on" tabindex="1">
+					</div>
+					<div class="">
+						<label for="signin-password" class="placeholder">Contrase&#241;a</label>
+						<input type="password" id="signin-password" class="text-input flex-table-input" name="session[password]" title="Contrase&#241;a" tabindex="2">
+					</div>
+					<button type="submit" class="submit btn" tabindex="4">Iniciar sesi&#243;n</button>
+					<div class="remember-forgot">
+						<label class="remember">
+							<input type="checkbox" value="1" name="remember_me" tabindex="3">
+							<span>Recordar mis datos</span>
+						</label>
+						<!--<span class="separator">�</span>
+						<a class="forgot" href="/account/resend_password">�Olvidaste tu contrase&#241;a?</a>-->
+					</div>
+				</form>
+			</div>
+			<div class="front-login">
+			<h4><strong>&#191;Eres nuevo?</strong> Reg&#237;strate</h4>
+		  
+			<form id="signup" action="signup" class="signup" method="post">
+			  <div class="placeholding-input">
+				<input type="text" id="signup-user-name" class="text-input" autocomplete="off" name="user[name]" maxlength="20">
+				<label for="signup-user-name" class="placeholder">Nombre completo</label>
+			  </div>
+			  <div class="placeholding-input">
+				<input type="text" id="signup-user-email" class="text-input email-input" autocomplete="off" name="user[email]">
+				<label for="signup-user-email" class="placeholder">Correo electr&#243;nico</label>
+			  </div>
+			  <div class="placeholding-input">
+				<input type="password" id="signup-user-password" class="text-input" name="user[user_password]">
+				<label for="signup-user-password" class="placeholder">Contrase&#241;a</label>
+			  </div>
+		  
+			  <input type="hidden" value="front" name="context">
+			  <input type="hidden" value="32a0c6f501f8c15d23fff9cb4edb873a20c1bc56" name="authenticity_token">
+			  <button type="submit" class="btn signup-btn">
+				Regístrate
+			  </button>
+			</form>
+		  </div>
+		</div>
+

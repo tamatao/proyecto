@@ -1,8 +1,9 @@
 // JavaScript Document
-function Page(url){
+function Page(sPage, options){
 	var self = this;
+	
 	//parseanos la url
-	this.uri = self.parseURL(url);
+	this.uri = self.parseURL(sPage);
 	
 }
 
@@ -12,10 +13,10 @@ $.extend(Page.prototype, {
 		//mandamos a pedir la pagina
 		var deferred = $.Deferred();
 		$.ajax({
-			"url":"template/"+self.uri.filename,
+			"url":"html/"+self.uri.filename,
 			"success": function(response){
 				location.hash = self.uri.filename;
-				$("body").empty().append(response.documentElement);
+				$("body").empty().append(response);
 			},
 			"error": function(){
 				deferred.reject( {
