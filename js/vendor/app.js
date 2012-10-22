@@ -86,11 +86,20 @@ $.extend(App, {
 	//si esta online va al server, si esta offline los busca en el almacen
 	getDataForView: function(o){
 		//obtenemos la definicion de la vista y la forma
+		var params = {};
+		var dfd = $.Deferred();
 		var aForm = App.application.getForm(o.form);
 		var aView = aForm.getView(o.view);
+		params.view = o.view;
 		if(App.onLine()){
-			App.request()
+			App.request({url:"getData.inc.php", data:params}).then(function(){
+				dfd.resolve();
+			})
+		}else{
+			dfd.resolve();
 		}
+		dfd.promise();
+		return dfd;
 	},
 	viewforms: function(o){
 		//obtenemos la definicion de la vista y la forma
@@ -99,9 +108,8 @@ $.extend(App, {
 		//ahora hay que obtener los datos para la vista, armamos el query de la vista
 		App.getDataForView(o).then(function(){
 			//despues de obtener los datos construimos la vista
+			alert(aForm.getQueryView(o.view))
 		});
-		
-		alert(aForm.getQueryView(o.view))
 	},
 	page : function(string){
 		
@@ -149,6 +157,9 @@ $.extend(App, {
 		return deferred;
 	},
 	alert: function(msg){
+	},
+	onLine: function(){
+		return true;
 	}
 });
 
